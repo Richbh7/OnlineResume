@@ -1,0 +1,609 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Charles-Axel Pauwels</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8" />
+				
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@cpauwels">
+		<meta property="og:title" content="Charles-Axel Pauwels: Portfolio" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="http://capauwels.com" />
+		<meta property="og:image" content="http://capauwels.com/img/share.jpg" />
+		<meta property="og:description" content="ui / ux design &middot; front-end development" />
+		<meta property="og:locale" content="en_US" />
+		<!-- Bootstrap -->
+		<script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok3v=1613a3a185/"},atok:"5e053386efcf2dbc3e06422818381ff0",petok:"353f498a9ee0a3257182256986df1f1fa9ebe949-1464115526-1800",zone:"capauwels.com",rocket:"0",apps:{"abetterbrowser":{"ie":"8"},"ga_key":{"ua":"UA-12718201-1","ga_bs":"2"}},sha2test:0}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=e982913d31/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+//]]>
+</script>
+<link href="style.css" rel="stylesheet" media="screen">
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="../../assets/js/html5shiv.js"></script>
+		<script src="../../assets/js/respond.min.js"></script>
+		<![endif]-->
+		
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="jquery.js" type="text/javascript"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="collapse.js" type="text/javascript"></script>
+		<script src="blur.min.js" type="text/javascript"></script>
+		
+		<link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
+		
+		<script>
+		$( document ).ready(function() {
+			var margintop = (($( window ).height())-$('.viewport-cube').height())/2;
+			
+			if( $( window ).width() >= 992 ) {
+				$('#physical-icon').height($( window ).height());
+				$('.viewport-cube').css('margin-top', (($(window).height()-($('.viewport-cube').height()+$('.title-portfolio').height()))/2)+'px');
+			
+				$('#digital-icon').height($( window ).height());
+				$('.viewport-iphone').css('margin-top', (($(window).height()-($('.viewport-iphone').height()+$('.title-portfolio').height()))/2)+'px');
+				
+				$('#physical-icon').animate({
+					opacity: 1
+				}, 1);
+				$('#digital-icon').animate({
+					opacity: 1
+				}, 1);
+				
+			}
+			
+			$('.blurred-background').css('background-size', 'cover');
+			$('.blurred-background').css('background-image', 'none');
+			
+			
+			
+		    $('.blurred-background').blurjs({
+		    	source: 'body',
+		    	radius: 10,
+		    	overlay: 'rgba(0,0,0,0.4)',
+		    	offset: {
+		    			x: 1,
+		    			y: 1
+		    		}
+		    });
+		    
+		    $('.iphone').click(function() {
+			    if( $( window ).width() >= 992 ) {		
+			    	//$('body').css('background-color', '#de1f05');	    
+				    $("#physical-header").animate({
+				    	opacity: 0
+				    }, 500, function() {
+				    	$("#physical-icon").width('0%');
+				    	$(".down-arrow").animate({
+				    		opacity: 1
+				    	}, 1000);
+				    	$("#digital-icon").animate({
+				    		width: '100%'
+				    	}, 1000, function() {
+				    		$("#digital").width('100%');
+				    		$("#digital").show();
+				    		$("#digital").animate({
+				    			opacity: 1
+				    		}, 0);
+				    		$('html, body').scrollTop(1);
+				    	});
+				    });
+				}     
+		    });
+		    
+		    $('.cube').click(function() {
+		        if( $( window ).width() >= 992 ) {
+		        	//$('body').css('background-color', 'rgb(38, 156, 228)');
+		            $("#digital-header").animate({
+		            	opacity: 0
+		            }, 500, function() {
+		            	$("#digital-icon").width('0%');
+		            	
+		            	$(".down-arrow").animate({
+		            		opacity: 1
+		            	}, 1000);
+		            	
+		            	$("#physical-icon").animate({
+		            		width: '100%'
+		            	}, 1000, function() {
+		            		$("#physical").width('100%');
+		            		$("#physical").show();
+		            		$("#physical").animate({
+		            			opacity: 1
+		            		}, 0);
+		            		$('html, body').scrollTop(1);
+		            	});
+		            });
+		            
+		        } 
+		    });
+		    
+		    $('.digital-goto').click(function() {
+		        if( $( window ).width() >= 992 ) {	
+		        	//$('body').css('background-color', '#de1f05');
+		        	$("html, body").animate({ 
+		        		scrollTop: 0 
+		        	}, 800, function() {
+		        		$("#digital-footer .row:nth-child(1)").addClass("hidden");
+		        		$("#digital-footer .row:nth-child(2)").removeClass("hidden");
+		        		$("#physical").hide();
+		        		$("#physical-header").animate({
+		        			opacity: 0
+		        		}, 800, function () {
+		        			$("#physical-icon").width('0%');
+		        			$("#digital-icon").animate({
+		        				width: '100%'
+		        			}, 100, function () {
+		        				$("#digital-header").animate({
+		        					opacity: 1
+		        				}, 800);
+		        				$("#digital").show().css('opacity', 1);
+		        			});
+		        		});
+		        	});
+		    	}     
+		    });
+		    
+		    $('.physical-goto').click(function() {
+		        if( $( window ).width() >= 992 ) {	
+		        	//$('body').css('background-color', 'rgb(38, 156, 228)');
+		        	$("html, body").animate({ 
+		        		scrollTop: 0 
+		        	}, 800, function() {
+		        		$("#physical-footer .row:nth-child(1)").addClass("hidden");
+		        		$("#physical-footer .row:nth-child(2)").removeClass("hidden");
+		        		$("#digital").hide();
+		        		$("#digital-header").animate({
+		        			opacity: 0
+		        		}, 800, function () {
+		        			$("#digital-icon").width('0%');
+		        			$("#physical-icon").animate({
+		        				width: '100%'
+		        			}, 100, function () {
+		        				$("#physical-header").animate({
+		        					opacity: 1
+		        				}, 800);
+		        				$("#physical").show().css('opacity', 1);
+		        			});
+		        		});
+		        	});
+		    	}     
+		    });
+		    
+		    $("#arrow-digital").click(function() {
+		    	$('html, body').animate({
+		    	    scrollTop: $("#digital").offset().top
+		    	}, 700);
+		    });
+		    
+		    $("#arrow-physical").click(function() {
+		    	$('html, body').animate({
+		    	    scrollTop: $("#physical").offset().top
+		    	}, 700);
+		    });
+		    
+		    $( window ).resize(function() {
+		    	var margintop = (($( window ).height())-$('.viewport-cube').height())/2;
+		    	
+		    	if( $( window ).width() >= 992 ) {
+		    		$('#physical-icon').height($( window ).height());
+		    		$('.viewport-cube').css('margin-top', (($(window).height()-($('.viewport-cube').height()+$('.title-portfolio').height()))/2)+'px');
+		    	
+		    		$('#digital-icon').height($( window ).height());
+		    		$('.viewport-iphone').css('margin-top', (($(window).height()-($('.viewport-iphone').height()+$('.title-portfolio').height()))/2)+'px');
+		    		
+		    		$('#physical-icon').css('opacity', 1);
+		    		$('#digital-icon').css('opacity', 1);
+		    	}
+		    });
+		    
+		});
+		
+		
+		</script>
+		<style type="text/css">
+			body.background {
+				background:url('img/instagram/2012-08-13_1344899578.jpg');
+				background-size: 0%;
+				background-repeat:no-repeat;
+				padding: 0px;
+				margin: 0px;
+				background-position: center center;
+				height: 100%;
+				background-color: #000;
+				background-attachment: fixed;
+			}
+			.blurred-background {
+				width: 100%;
+				margin: 0px;
+				padding: 0px;
+				/*background-size: cover;*/
+				background-position: center center;
+				background-attachment: fixed;
+				background-image: url('img/loading.gif');
+				background-position: center center;
+				background-size: 32px 32px;
+				background-repeat: no-repeat;
+			}
+			
+		</style>
+	<script type="text/javascript">
+/* <![CDATA[ */
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12718201-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+(function(b){(function(a){"__CF"in b&&"DJS"in b.__CF?b.__CF.DJS.push(a):"addEventListener"in b?b.addEventListener("load",a,!1):b.attachEvent("onload",a)})(function(){"FB"in b&&"Event"in FB&&"subscribe"in FB.Event&&(FB.Event.subscribe("edge.create",function(a){_gaq.push(["_trackSocial","facebook","like",a])}),FB.Event.subscribe("edge.remove",function(a){_gaq.push(["_trackSocial","facebook","unlike",a])}),FB.Event.subscribe("message.send",function(a){_gaq.push(["_trackSocial","facebook","send",a])}));"twttr"in b&&"events"in twttr&&"bind"in twttr.events&&twttr.events.bind("tweet",function(a){if(a){var b;if(a.target&&a.target.nodeName=="IFRAME")a:{if(a=a.target.src){a=a.split("#")[0].match(/[^?=&]+=([^&]*)?/g);b=0;for(var c;c=a[b];++b)if(c.indexOf("url")===0){b=unescape(c.split("=")[1]);break a}}b=void 0}_gaq.push(["_trackSocial","twitter","tweet",b])}})})})(window);
+/* ]]> */
+</script>
+</head>
+	
+	<body class="background">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					
+					<a class="navbar-brand" href="/">Charles-Axel Pauwels</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="index.htm">Home</a></li>
+						<li><a href="about.htm">About</a></li>
+						<li class="active"><a href="portfolio.htm">Portfolio</a></li>
+						<li><a href="" target="_blank">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<div class="cover content blurred-background">
+			<div id="digital-icon">
+				<div id="digital-header" class="hidden-sm hidden-xs">
+					<div class="viewport-iphone margin-top-md margin-bottom-sm">
+							<div class="iphone" style="transition: 500ms; -webkit-transition: 500ms;">
+								<div class="frame">
+									<div class="top">
+										<div class="front-cam"></div>
+										<div class="speaker"></div>
+									</div>
+									<div class="screen"></div>
+									<div class="home"></div>
+								</div>
+							</div>
+					</div>
+					<h4 class="text-center">digital portfolio</h4>
+					<p class="text-center"><img src="img/down.svg" alt="" class="down-arrow" id="arrow-digital" /></p>
+				</div>
+				
+				<div id="digital-header-sm" class="visible-sm visible-xs blurred-background" style="background-color: #000; background-image: none;" >
+					<div class="viewport-iphone margin-top-md margin-bottom-sm" style="-moz-transform: scale(0.75,0.75); -webkit-transform: scale(0.75,0.75);">
+							<div class="iphone" style="transition: 500ms; -webkit-transition: 500ms;">
+								<div class="frame">
+									<div class="top">
+										<div class="front-cam"></div>
+										<div class="speaker"></div>
+									</div>
+									<div class="screen"></div>
+									<div class="home"></div>
+								</div>
+							</div>
+					</div>
+					<h4 class="text-center">digital portfolio</h4>
+				</div>
+			</div>
+			
+			<div id="digital">
+				<div style="background-color: rgb(32,31,36);" class="content margin-top-sm portfolio-item">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3 col-xs-12 no-gutter ">
+								<div class="thumbnail margin-bottom-sm">
+									<img src="img/portfolio/headers/placelist.jpg" alt="...">
+									<div class="caption">
+										<p class="project-description">PlaceList allows you to make a collection of places you want to visit while traveling, using recommendations from your friends.</p>
+								    	<p class="text-center"><a href="projects/placelist" class="btn btn-transparent btn-lg">PlaceList</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--<div style="background-color: rgb(246,246,244);" class="content portfolio-item">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3 col-xs-12 no-gutter">
+								<div class="thumbnail margin-bottom-sm">
+									<img src="img/portfolio/headers/datesio.png" alt="...">
+									<div class="caption">
+										<p class="project-description-inverse">Scheduling a romantic date isn't always easy.<br />Surprise your partner with a lovely rendez-vous.</p>
+								    	<p class="text-center"><a href="projects/datesio" class="btn btn-transparent-inverse btn-lg">Dates.io</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>-->
+				<div style="background-color: #4778c5;" class="content portfolio-item">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3 col-xs-12 no-gutter">
+								<div class="thumbnail margin-bottom-sm">
+									<img src="img/portfolio/headers/lecture2.png" alt="...">
+									<div class="caption">
+										<p class="project-description">Challenging the future of education by redefining the interactions during a lecture.</p>
+								    	<p class="text-center"><a href="projects/lecture2" class="btn btn-transparent btn-lg">Lecture&sup2;</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div style="background-color: #000;" class="content portfolio-item">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3 col-xs-12 no-gutter">
+								<div class="thumbnail margin-bottom-sm">
+									<img src="img/portfolio/headers/debailleul.jpg" alt="...">
+									<div class="caption">
+										<p class="project-description">A high-end Belgian chocolate and pastry company that's all about the concern for harmony, elegance and finesse.</p>
+								    	<p class="text-center"><a href="projects/debailleul" class="btn btn-transparent btn-lg">Debailleul</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div style="background-color: rgb(255,235,85);" class="content portfolio-item">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3 col-xs-12 no-gutter">
+								<div class="thumbnail margin-bottom-sm">
+									<img src="img/portfolio/headers/unplanned.png" alt="...">
+									<div class="caption">
+										<p class="project-description-inverse">A project started on a 72-hour hackathon that took place on a bus traveling 2400km through Europe.</p>
+								    	<p class="text-center"><a href="projects/unplanned" class="btn btn-transparent-inverse btn-lg">Unplanned</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div style="background-color: #3e4047;" class="content portfolio-item">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3 col-xs-12 no-gutter">
+								<div class="thumbnail margin-bottom-sm">
+									<img src="img/portfolio/headers/contactpaper.png" alt="...">
+									<div class="caption">
+										<p class="project-description">Lost your iPhone? Get your $599 iPhone back with a 99&cent; app that shows your contact information on your lockscreen.</p>
+								    	<p class="text-center"><a href="projects/contactpaper" class="btn btn-transparent btn-lg">Contactpaper</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="blurred-background hidden-sm hidden-xs">
+					<div class="container" id="digital-footer">
+						<div class="row">
+							<div class="col-md-12">
+								<h4 class="text-center margin-top-lg">There is more!</h4>
+								
+								<p class="project-description margin-top-sm margin-bottom-sm">I also have a portfolio with physical products. Check it out!</p>
+								<p class="text-center"><a class="btn btn-transparent btn-lg margin-bottom-lg physical-goto">Physical Portfolio</a></p>
+							</div>
+						</div>
+						
+						<div class="row hidden">
+							<div class="col-md-12">
+								<h4 class="text-center margin-top-lg">Intrigued?</h4>
+								
+								<p class="project-description margin-top-sm margin-bottom-sm">We may have common interests.</p>
+								<p class="text-center"><a class="btn btn-transparent btn-lg " href="/cdn-cgi/l/email-protection#63000213021614060f1023040e020a0f4d000c0e" target="_blank">Contact</a></p>
+								<p class="text-center margin-bottom-md"><a style="color: white; cursor: pointer; font-weight: 300;" class="physical-goto">go back to the physical portfolio</a></p>
+								
+								<h4 class="text-center">Share</h4>
+								<p class="text-center margin-bottom-md">
+									<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcapauwels.com" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img src="../img/facebook.svg" class="share-icon" /></a>
+									<a href="https://twitter.com/share?url=http%3A%2F%2Fcapauwels.com&text=Portfolio%20by%20Charles-Axel%20Pauwels%20%E2%80%94%20ui%20%2F%20ux%20design%20%C2%B7%20front-end%20development%20%E2%80%94&related=@cpauwels" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=256,width=600');return false;"><img src="../img/twitter.svg" class="share-icon" /></a>
+									<a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fcapauwels.com&media=http%3A%2F%2Fcapauwels.com%2Fimg%2Fshare.jpg&description=Portfolio%20by%20Charles-Axel%20Pauwels%20%E2%80%94%20ui%20%2F%20ux%20design%20%C2%B7%20front-end%20development" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=330,width=750');return false;"><img src="../img/pinterest.svg" class="share-icon" /></a>
+									<a href="https://plus.google.com/share?url=http%3A%2F%2Fcapauwels.com" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img src="../img/googleplus.svg" class="share-icon" style="padding-right: 20px; width: 90px;" /></a>
+								</p>
+							</div>
+						</div>
+					</div>	
+				</div>
+				
+			</div>
+			
+			
+			<!-- Physical -->
+			
+			<div id="physical-icon">
+				<div id="physical-header" class="hidden-sm hidden-xs">
+					<div class="viewport-cube margin-top-md margin-bottom-sm">
+					    <div class="cube" style="transition: 500ms; -webkit-transition: 500ms;">
+					        <div>
+					        	<div class="face-content">&nbsp;</div>
+					        </div>
+					        <div>
+					        	<div class="face-content">&nbsp;</div>
+					        </div>
+					        <div>
+					        	<div class="face-content">&nbsp;</div>
+					        </div>
+					        <div>
+					        	<div class="face-content">&nbsp;</div>
+					        </div>
+					        <div>
+					        	<div class="face-content">&nbsp;</div>
+					        </div>
+					        <div>
+					        	<div class="face-content">&nbsp;</div>
+					        </div>
+					    </div>
+					</div>
+					<h4 class="text-center title-portfolio">physical portfolio</h4>
+					<p class="text-center"><img src="img/down.svg" alt="" class="down-arrow" id="arrow-physical" /></p>
+				</div>
+				
+				<div id="physical-header-sm" class="visible-sm visible-xs content blurred-background" style="background-color: #000; background-image: none;">
+					<div class="viewport-cube margin-top-md margin-bottom-sm" style="-moz-transform: scale(0.5,0.5); -webkit-transform: scale(0.5,0.5);">
+					    <div class="cube" style="transition: 500ms; -webkit-transition: 500ms;">
+					        <div>
+					        	<div class="face-content">&nbsp;</div>
+					        </div>
+					        <div>
+					        	<div class="face-content">&nbsp;</div>
+					        </div>
+					        <div>
+					        	<div class="face-content">&nbsp;</div>
+					        </div>
+					        <div>
+					        	<div class="face-content">&nbsp;</div>
+					        </div>
+					        <div>
+					        	<div class="face-content">&nbsp;</div>
+					        </div>
+					        <div>
+					        	<div class="face-content">&nbsp;</div>
+					        </div>
+					    </div>
+					</div>
+					<h4 class="text-center">physical portfolio</h4>
+				</div>
+			</div>
+			<div id="physical">
+				<div style="background-color: rgb(0,137,209);" class="content portfolio-item">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3 col-xs-12 no-gutter">
+								<div class="thumbnail margin-bottom-sm">
+									<img src="img/portfolio/headers/solarailway.jpg" alt="...">
+									<div class="caption">
+										<p class="project-description">Using the space between rails to power trains using solar energy.</p>
+								    	<p class="text-center"><a href="projects/solarailway" class="btn btn-transparent btn-lg">SolaRailway</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div style="background-color: rgb(210,214,218);" class="content portfolio-item">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3 col-xs-12 no-gutter">
+								<div class="thumbnail margin-bottom-sm">
+									<img src="img/portfolio/headers/quickswitch.jpg" alt="...">
+									<div class="caption">
+										<p class="project-description-inverse">Switching between two lenses on a camera in less than 5 seconds.</p>
+								    	<p class="text-center"><a href="projects/quickswitch" class="btn btn-transparent-inverse btn-lg">QuickSwitch</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div style="background-color: rgb(139,1,0);" class="content portfolio-item">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3 col-xs-12 no-gutter">
+								<div class="thumbnail margin-bottom-sm">
+									<img src="img/portfolio/headers/ebox.jpg" alt="...">
+									<div class="caption">
+										<p class="project-description">Big entertainment, small size.<br />A portable projector powered by Android, wrapped in a sleek package.</p>
+								    	<p class="text-center"><a href="projects/ebox" class="btn btn-transparent btn-lg">eBox</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--<div style="background-color: rgb(216,216,216);" class="content portfolio-item">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3 col-xs-12 no-gutter">
+								<div class="thumbnail margin-bottom-sm">
+									<img src="img/portfolio/headers/camcorder.jpg" alt="...">
+									<div class="caption">
+										<p class="project-description-inverse">A small and compact camcorder that doesn't compromise on image quality and screen size.</p>
+								    	<p class="text-center"><a href="portfolio" class="btn btn-transparent-inverse btn-lg">Camcorder</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>-->
+				
+				<div class="blurred-background hidden-sm hidden-xs">
+					<div class="container" id="physical-footer">
+						<div class="row">
+							<div class="col-md-12">
+								<h4 class="text-center margin-top-lg">There is more!</h4>
+								
+								<p class="project-description margin-top-sm margin-bottom-sm">I also have a portfolio with digital products. Check it out!</p>
+								<p class="text-center"><a class="btn btn-transparent btn-lg margin-bottom-lg digital-goto">Digital Portfolio</a></p>
+							</div>
+						</div>
+						
+						<div class="row hidden">
+							<div class="col-md-12">
+								<h4 class="text-center margin-top-lg">Intrigued?</h4>
+								
+								<p class="project-description margin-top-sm margin-bottom-sm">We may have common interests.</p>
+								<p class="text-center"><a class="btn btn-transparent btn-lg" href="/cdn-cgi/l/email-protection#60030110011517050c1320070d01090c4e030f0d" target="_blank">Contact</a></p>
+								<p class="text-center margin-bottom-md"><a style="color: white; cursor: pointer; font-weight: 300;" class="digital-goto">go back to the digital portfolio</a></p>
+								
+								<h4 class="text-center">Share</h4>
+								<p class="text-center margin-bottom-md">
+									<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcapauwels.com" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img src="../img/facebook.svg" class="share-icon" /></a>
+									<a href="https://twitter.com/share?url=http%3A%2F%2Fcapauwels.com&text=Portfolio%20by%20Charles-Axel%20Pauwels%20%E2%80%94%20ui%20%2F%20ux%20design%20%C2%B7%20front-end%20development%20%E2%80%94&related=@cpauwels" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=256,width=600');return false;"><img src="../img/twitter.svg" class="share-icon" /></a>
+									<a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fcapauwels.com&media=http%3A%2F%2Fcapauwels.com%2Fimg%2Fshare.jpg&description=Portfolio%20by%20Charles-Axel%20Pauwels%20%E2%80%94%20ui%20%2F%20ux%20design%20%C2%B7%20front-end%20development" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=330,width=750');return false;"><img src="../img/pinterest.svg" class="share-icon" /></a>
+									<a href="https://plus.google.com/share?url=http%3A%2F%2Fcapauwels.com" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img src="../img/googleplus.svg" class="share-icon" style="padding-right: 20px; width: 90px;" /></a>
+								</p>
+							</div>
+						</div>
+					</div>	
+				</div>
+				
+			</div>
+			
+			<div class="content blurred-background visible-xs visible-sm">
+				
+				<div class="col-md-12">
+					<h4 class="text-center" style="margin-top: 0px; padding-top: 30px !important ;">Intrigued?</h4>
+					
+					<p class="project-description margin-top-sm margin-bottom-sm">We may have common interests.</p>
+					<p class="text-center"><a class="btn btn-transparent btn-lg " href="/cdn-cgi/l/email-protection#99faf8e9f8eceefcf5ead9fef4f8f0f5b7faf6f4" target="_blank">Contact</a></p>
+					
+					<h4 class="text-center">Share</h4>
+					<p class="text-center margin-bottom-md">
+						<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcapauwels.com" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img src="../img/facebook.svg" class="share-icon" /></a>
+						<a href="https://twitter.com/share?url=http%3A%2F%2Fcapauwels.com&text=Portfolio%20by%20Charles-Axel%20Pauwels%20%E2%80%94%20ui%20%2F%20ux%20design%20%C2%B7%20front-end%20development%20%E2%80%94&related=@cpauwels" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=256,width=600');return false;"><img src="../img/twitter.svg" class="share-icon" /></a>
+						<a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fcapauwels.com&media=http%3A%2F%2Fcapauwels.com%2Fimg%2Fshare.jpg&description=Portfolio%20by%20Charles-Axel%20Pauwels%20%E2%80%94%20ui%20%2F%20ux%20design%20%C2%B7%20front-end%20development" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=330,width=750');return false;"><img src="../img/pinterest.svg" class="share-icon" /></a>
+						<a href="https://plus.google.com/share?url=http%3A%2F%2Fcapauwels.com" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img src="../img/googleplus.svg" class="share-icon" style="padding-right: 20px; width: 90px;" /></a>
+					</p>
+				</div>
+			</div>
+		</div>
+		
+	<script type="text/javascript">/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>
