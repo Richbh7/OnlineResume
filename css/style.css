@@ -1260,7 +1260,7 @@ background:#fff;
 		width: 47%;
 	}
 	.pro-pic img {
-		padding: 7px;
+		padding: 0px;
 	}
 	.pro-text h1 {
 		font-size: 25px;
@@ -1345,7 +1345,7 @@ background:#fff;
 		width: 100%;
 	}
 	.pro-pic img {
-		padding: 12px;
+		padding: 0px;
 	}
 	.pro-pic {
 		width: 28%;
@@ -1392,7 +1392,7 @@ background:#fff;
 		margin-right: 22px;
 	}
 	.pro-pic img {
-		padding: 8px;
+		padding: 0px;
 	}
 	.abt-left {
 		padding: 40px 15px;
